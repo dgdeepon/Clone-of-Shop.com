@@ -4,6 +4,7 @@ import { Box, Container, Flex, Grid, Heading, Image,Spacer,Text} from '@chakra-u
 import ProductsCarousel from '../Components/ProductsCarousel'
 import MidBannerOptions from '../Components/MidBannerOptions';
 import SingleLineCarousel from '../Components/SingleLineCarousel';
+import Footer from '../Components/Footer'
 
 
 function Home() {
@@ -110,7 +111,8 @@ function Home() {
           </Box>
       </Grid>
       </div>
-
+        
+      <Footer/>
     </div>
   )
 }
