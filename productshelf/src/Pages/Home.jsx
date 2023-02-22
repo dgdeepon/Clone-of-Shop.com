@@ -13,7 +13,7 @@ function Home() {
   return (
     <div>
       <Navbar/>
-      <Image pt={160} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner'/>
+      <Image pt={{base:180,sm:170,md:160}} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner'/>
       {/* Static Options */}
       <Grid templateColumns={{base:'repeat(1,1fr)',sm:'repeat(2,1fr)',md:'repeat(3,1fr)',xl:'repeat(4,1fr)'}} textAlign='left' p={5} gap='10'>
         <Box boxShadow='rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;' p={3}>
@@ -91,23 +91,23 @@ function Home() {
       <div style={{width:'80%',margin:'auto',marginBottom:'50px'}}>
       <Heading>Our Brands</Heading>
       <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(5,1fr)'}} mt='3'>
-          <Box>
+          <Box boxSize={'200px'} mb='50px'>
             <Text as={'b'} size='2xl'>HEALTH & NUTRITION</Text>
-            <Image src='https://img.shop.com/Image/homepage/healthnutirtion1572880380738.jpg?id=5014114' alt='HEALTH & NUTRITION' />
+            <Image src='https://img.shop.com/Image/homepage/healthnutirtion1572880380738.jpg?id=5014114' alt='HEALTH & NUTRITION'  />
           </Box>
-          <Box>
+          <Box boxSize={'200px'} mb='50px'>
             <Text as={'b'} size='mb'>BEAUTY</Text>
             <Image src='https://img.shop.com/Image/homepage/lipstick1572880828301.jpg?id=5014118' alt='BEAUTY' />
           </Box>
-          <Box>
+          <Box boxSize={'200px'} mb='50px'>
             <Text as={'b'} size='mb'>HOME & CLEANING</Text>
             <Image src='https://img.shop.com/Image/homepage/home_ma1572880950379.jpg?id=5014120' alt='HOME & CLEANING' />
           </Box>
-          <Box>
+          <Box boxSize={'200px'} mb='50px'>
             <Text as={'b'} size='mb'>BABY & KIDS</Text>
             <Image src='https://img.shop.com/Image/homepage/baby-kids1572881179463.jpg?id=5014124' alt='BABY & KIDS' />
           </Box>
-          <Box>
+          <Box boxSize={'200px'} mb='50px'>
             <Text as={'b'} size='mb'>JEWELRY</Text>
             <Image src='https://img.shop.com/Image/homepage/1840336563__225x225-img__.jpg?id=5015192' alt='JEWELRY' />
           </Box>
