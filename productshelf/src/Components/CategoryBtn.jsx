@@ -1,21 +1,15 @@
 import React from 'react'
 import {Drawer,DrawerBody,DrawerFooter,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton,useDisclosure,Text, Divider} from '@chakra-ui/react';
-import {faArrowRotateLeft, faBagShopping, faBars, faCircleArrowLeft, faCircleQuestion, faDollar, faGift, faLocation, faLocationDot, faRecycle, faTag, faTruck} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRotateLeft, faBagShopping, faBars,  faCircleQuestion, faDollar, faGift,  faLocationDot, faRecycle, faTag, faTruck} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {ChevronRightIcon} from '@chakra-ui/icons';
 import BtnStyle from './Style/style.module.css';
 import CategoryOptionDraw from './CategoryOptionDraw';
-import { Navigate } from 'react-router-dom';
 
 export default function CategoryBtn() {
 
     const {isOpen,onOpen,onClose}=useDisclosure();
 
-
-    // Option Funciton
-    function OpenFn(e){
-      
-    }
 
   return (
     <>
@@ -36,12 +30,12 @@ export default function CategoryBtn() {
       <DrawerBody>
       <Text className={BtnStyle.cateButton}>Layered Jewelry Sale</Text>
       <Text className={BtnStyle.cateButton}>SHOP.COM Home Warranties</Text>
-      <Text className={BtnStyle.cateButton} id='cl' onClick={OpenFn}>Clothes<ChevronRightIcon/></Text>
+      <Text className={BtnStyle.cateButton}><CategoryOptionDraw id={'cl'}/></Text>
       <Text className={BtnStyle.cateButton}>Shoes<ChevronRightIcon/></Text>
-      <Text className={BtnStyle.cateButton} id='bea'>Beauty<ChevronRightIcon/></Text>
+      <Text className={BtnStyle.cateButton}><CategoryOptionDraw id={'bea'}/></Text>
       <Text className={BtnStyle.cateButton}>Home<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Electronics<ChevronRightIcon/></Text>
-      <Text className={BtnStyle.cateButton} id='hn'>Health & Nutrition<ChevronRightIcon/></Text>
+      <Text className={BtnStyle.cateButton} id='hn'><CategoryOptionDraw id={'hn'}/></Text>
       <Text className={BtnStyle.cateButton} id='jewel'>Jewelry<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Kids<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Pet Supplies<ChevronRightIcon/></Text>

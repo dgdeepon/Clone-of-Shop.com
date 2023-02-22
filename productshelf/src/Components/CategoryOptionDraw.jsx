@@ -1,12 +1,11 @@
 import React from 'react'
-import {Drawer,DrawerBody,DrawerFooter,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton,useDisclosure,Text, Divider} from '@chakra-ui/react';
+import {Drawer,DrawerBody,DrawerFooter,DrawerHeader,DrawerOverlay,DrawerContent,DrawerCloseButton,useDisclosure,Text} from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import {ChevronRightIcon} from '@chakra-ui/icons';
 import BtnStyle from './Style/style.module.css';
 
 export default function CategoryOptionDraw({id}) {
-    console.log(id);
 
     const data={
         cl:[`Women's Clothing`,`Men's Clothing`,`Accessories`,`Girl's Clothing`,`Boy's Clothing`,`Baby & Toddler Clothing`],
@@ -20,25 +19,21 @@ export default function CategoryOptionDraw({id}) {
 
   return (
     <>
-    <div onClick={onOpen}>
-
-    </div>
+    <Text onClick={onOpen}>{id==='cl'? 'Clothes':id==='bea'? 'Beauty':id==='hn'? 'Health & Nutrition':id==='jewel'? 'Jewelry':''} <ChevronRightIcon/></Text>
     <Drawer
     isOpen={isOpen}
-    placement='right'
+    placement='left'
     onClose={onClose}
-    zIndex={1}
+    zIndex={0}
   >
     <DrawerOverlay />
     <DrawerContent>
-    <Text onClick={()=>{
-        <DrawerCloseButton/>
-    }}><FontAwesomeIcon icon={faArrowLeft}/> Back to main</Text>
+    <Text cursor={'pointer'} onClick={onClose}><FontAwesomeIcon icon={faArrowLeft}/> Back to main</Text>
       <DrawerCloseButton />
       <DrawerHeader>{id==='cl'? 'Clothes':id==='bea'? 'Beauty':id==='hn'? 'Health & Nutrition':id==='jewel'? 'Jewelry':''}</DrawerHeader>
       <DrawerBody>
     {id==='cl'? data.cl.map((el,i)=>{
-        return <Text className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text>
+        return <Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text>
     }):''}
       </DrawerBody>
 
