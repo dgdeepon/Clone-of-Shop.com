@@ -35,8 +35,8 @@ export default function CategoryBtn() {
       <Text className={BtnStyle.cateButton}><CategoryOptionDraw id={'bea'}/></Text>
       <Text className={BtnStyle.cateButton}>Home<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Electronics<ChevronRightIcon/></Text>
-      <Text className={BtnStyle.cateButton} id='hn'><CategoryOptionDraw id={'hn'}/></Text>
-      <Text className={BtnStyle.cateButton} id='jewel'>Jewelry<ChevronRightIcon/></Text>
+      <Text className={BtnStyle.cateButton}><CategoryOptionDraw id={'hn'}/></Text>
+      <Text className={BtnStyle.cateButton}><CategoryOptionDraw id={'jewel'}/></Text>
       <Text className={BtnStyle.cateButton}>Kids<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Pet Supplies<ChevronRightIcon/></Text>
       <Text className={BtnStyle.cateButton}>Food & Drink<ChevronRightIcon/></Text>
