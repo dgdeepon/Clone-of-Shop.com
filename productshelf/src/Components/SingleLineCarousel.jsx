@@ -23,6 +23,32 @@ const settings = {
   slidesToShow: 4.5,
   // centerMode: true,
   // variableWidth: true
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 
 // function ProductBox
@@ -75,7 +101,7 @@ export default function SingleLineCarousel({condition,mainTxt}) {
   
   const [slider, setSlider] = React.useState(data);
 
-  return (<div style={{padding:'20px',width:'90%',margin:'auto',boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px;'}}>
+  return (<div style={{padding:'20px',width:'90%',margin:'auto'}}>
   <Heading as={'h3'} size='lg' mb={'2'}>{mainTxt}</Heading>
     <Box
       position={'relative'}
@@ -118,7 +144,7 @@ export default function SingleLineCarousel({condition,mainTxt}) {
       </IconButton>
       {/* Slider */}
       {loading===false? 
-        <Slider {...settings} 
+        <Slider {...settings}
       ref={(slider) => setSlider(slider)}
       >
         {data?.map((card, index) => (

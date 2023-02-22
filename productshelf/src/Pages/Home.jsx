@@ -5,6 +5,8 @@ import ProductsCarousel from '../Components/ProductsCarousel'
 import MidBannerOptions from '../Components/MidBannerOptions';
 import SingleLineCarousel from '../Components/SingleLineCarousel';
 import Footer from '../Components/Footer'
+import BackToTop from '../Components/BackToTop';
+
 
 
 function Home() {
@@ -13,7 +15,7 @@ function Home() {
       <Navbar/>
       <Image pt={160} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner'/>
       {/* Static Options */}
-      <Grid templateColumns={'repeat(4,1fr)'} textAlign='left' p={5} gap='10'>
+      <Grid templateColumns={{base:'repeat(1,1fr)',sm:'repeat(2,1fr)',md:'repeat(3,1fr)',xl:'repeat(4,1fr)'}} textAlign='left' p={5} gap='10'>
         <Box boxShadow='rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;' p={3}>
           <Text fontSize={'xl'}>
           Costway 8pc Outdoor Patio Rattan Furniture Set. Was: $1,579.99 Now: $1,018.95
@@ -49,7 +51,7 @@ function Home() {
       {/* MidBannerOptions */}
       <Container display={'flex'} w='100%' flexDirection={'column'} alignItems='center' p='10px' mb={'5'}>
       <Heading>St. Patrick's Day</Heading>
-        <Flex mt={'5'} p='10px'>
+        <Flex mt={'5'} p='10px' flexWrap={{base:'wrap',sm:'wrap',lg:'revert-layer'}}>
           <MidBannerOptions link={'https://img.shop.com/Image/240000/248000/248061/products/1927178134.jpg?plain&size=400x400&id=5268629'} txt={'PARTY DECORATIONS'}/>
           <MidBannerOptions link={'https://img.shop.com/Image/260000/264400/264491/products/1637075340.jpg?plain&size=400x400&id=5268630'} txt={'COSTUMES & ACCESSORIES'}/>
           <MidBannerOptions link={'https://img.shop.com/Image/210000/217300/217306/products/1951432818.jpg?plain&size=400x400&id=5268631'} txt={'PARTY TABLEWARE'}/>
@@ -64,7 +66,7 @@ function Home() {
       {/* MidBannerOptions */}
       <Container display={'flex'} w='100%' flexDirection={'column'} alignItems='center' p='10px' mb={'5'}>
       <Heading>Spring Cleaning</Heading>
-        <Flex mt={'5'} p='10px'>
+        <Flex mt={'5'} p='10px' flexWrap={{base:'wrap',sm:'wrap',lg:'revert-layer'}}>
           <MidBannerOptions link='https://img.shop.com/Image/240000/243300/243390/products/1954251853.jpg?plain&size=750x750&id=5269161' txt={'HOUSEHOLD CLEANERS'}/>
           <MidBannerOptions link={'https://img.shop.com/Image/240000/243300/243390/products/1954251883.jpg?plain&size=750x750&id=5269162'} txt={'CLEANING TOOLS'}/>
           <MidBannerOptions link={'https://img.shop.com/Image/260000/263100/263143/products/1836611183.png?plain&size=400x400&id=5269163'} txt={'AIR FRESHENERS'}/>
@@ -111,7 +113,7 @@ function Home() {
           </Box>
       </Grid>
       </div>
-        
+        <BackToTop/>
       <Footer/>
     </div>
   )

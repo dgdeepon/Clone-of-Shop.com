@@ -21,9 +21,29 @@ import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-sol
 const settings = {
   infinite: true,
   speed: 300,
-  slidesToShow: 3,
-  // centerMode: true,
-  // variableWidth: true
+  slidesToShow:3,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
 };
 
 // function ProductBox
@@ -77,8 +97,8 @@ export default function ProductsCarousel({mainImg,store,mainTxt}) {
   const [slider, setSlider] = React.useState(data);
 
   return (<div style={{padding:'10px'}}>
-  <Grid mb={'5'} templateColumns={'30% 70%'} p='5' gap={3}  boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px;'}>
-  <Box>
+  <Grid mb={'5'} templateColumns={{base:'100%',md:'30% 70%'}} p='5' gap={3}  boxShadow={'rgba(0, 0, 0, 0.24) 0px 3px 8px;'}>
+  <Box visibility={{base:'none',md:'visible'}}>
   <Heading as={'h3'} size='lg' mb={'2'}>{mainTxt}</Heading>
   {/* <Text>{mainTxt}</Text> */}
   <Image src={mainImg} alt={store} h='-webkit-fit-content' w={'-moz-fit-content'}/>
