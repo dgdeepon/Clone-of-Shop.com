@@ -30,7 +30,7 @@ export default function Navbar(){
     })}
     </Select>
     <Input border={'1px'} borderColor={'gray.300'} placeholder='Search ProductShelf...' type='search' />
-    <Search2Icon/>
+    <Search2Icon cursor={'pointer'}/>
     </HStack>
     </Grid>
     </Center>

@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import { Box, Container, Flex, Grid, Heading, Image,Spacer,Text} from '@chakra-ui/react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import MidBannerOptions from '../Components/MidBannerOptions';
+import SingleLineCarousel from '../Components/SingleLineCarousel';
 
 
 function Home() {
@@ -31,13 +32,13 @@ function Home() {
           <Image src='https://img.shop.com/Image/homepage/shop-eng-Lole-300x250-img1676307848468.jpg' alt='banner1' />
         </Box>
         <Box  boxShadow='rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;' p={3}>
-          <Text fontSize={'xl'}>
+          {/* <Text fontSize={'xl'}>
           Costway 8pc Outdoor Patio Rattan Furniture Set. Was: $1,579.99 Now: $1,018.95
-          </Text>
-          <Image src='https://img.shop.com/Image/280000/284400/284458/products/1885773886.jpg?plain&size=300x300' alt='banner1' />
-          <Text as={'u'} fontSize='lg' cursor={'pointer'}>
+          </Text> */}
+          <Image src='https://img.shop.com/Image/homepage/us-gap-winter-feb231676913706578.png?id=5269071' alt='banner1' />
+          {/* <Text as={'u'} fontSize='lg' cursor={'pointer'}>
             Buy Now
-          </Text>
+          </Text> */}
         </Box>
       </Grid>
 
@@ -76,7 +77,39 @@ function Home() {
 
       <ProductsCarousel mainTxt={'Shine in Layered Jewelry'} mainImg={'https://img.shop.com/Image/homepage/layered-usa-107522-winter-2023-banner-bgsq-min1674151934885.jpg'} store={"Layered"}/>
     <Spacer/>
+
+      {/* Normal Carousel */}
+      <SingleLineCarousel condition={'Health & Nutrition'} mainTxt='Cleaning & Health Have Never Been More Important'/> 
+
+    {/* Product Carousel */}
       <ProductsCarousel mainTxt={'Cutter & Buck'} mainImg={'https://img.shop.com/Image/250000/253200/253251/products/alt_843659150.jpg?plain&size=1001x1001'} store={'Cutter & Buck'}/>
+
+      {/* Our Brands */}
+      <div style={{width:'80%',margin:'auto',marginBottom:'50px'}}>
+      <Heading>Our Brands</Heading>
+      <Grid templateColumns={'repeat(5,1fr)'} mt='3'>
+          <Box>
+            <Text as={'b'} size='2xl'>HEALTH & NUTRITION</Text>
+            <Image src='https://img.shop.com/Image/homepage/healthnutirtion1572880380738.jpg?id=5014114' alt='HEALTH & NUTRITION' />
+          </Box>
+          <Box>
+            <Text as={'b'} size='mb'>BEAUTY</Text>
+            <Image src='https://img.shop.com/Image/homepage/lipstick1572880828301.jpg?id=5014118' alt='BEAUTY' />
+          </Box>
+          <Box>
+            <Text as={'b'} size='mb'>HOME & CLEANING</Text>
+            <Image src='https://img.shop.com/Image/homepage/home_ma1572880950379.jpg?id=5014120' alt='HOME & CLEANING' />
+          </Box>
+          <Box>
+            <Text as={'b'} size='mb'>BABY & KIDS</Text>
+            <Image src='https://img.shop.com/Image/homepage/baby-kids1572881179463.jpg?id=5014124' alt='BABY & KIDS' />
+          </Box>
+          <Box>
+            <Text as={'b'} size='mb'>JEWELRY</Text>
+            <Image src='https://img.shop.com/Image/homepage/1840336563__225x225-img__.jpg?id=5015192' alt='JEWELRY' />
+          </Box>
+      </Grid>
+      </div>
 
     </div>
   )
