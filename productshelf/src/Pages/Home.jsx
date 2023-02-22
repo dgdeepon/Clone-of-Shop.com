@@ -90,7 +90,7 @@ function Home() {
       {/* Our Brands */}
       <div style={{width:'80%',margin:'auto',marginBottom:'50px'}}>
       <Heading>Our Brands</Heading>
-      <Grid templateColumns={'repeat(5,1fr)'} mt='3'>
+      <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(5,1fr)'}} mt='3'>
           <Box>
             <Text as={'b'} size='2xl'>HEALTH & NUTRITION</Text>
             <Image src='https://img.shop.com/Image/homepage/healthnutirtion1572880380738.jpg?id=5014114' alt='HEALTH & NUTRITION' />

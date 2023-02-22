@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 export default function BackToTop(){
+
 return <Link to='/#'>
         <Box position='fixed'
             bottom='20px'
