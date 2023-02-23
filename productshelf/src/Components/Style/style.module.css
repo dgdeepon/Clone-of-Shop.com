@@ -1,0 +1,8 @@
+.cateButton{
+    padding: 8px;
+    cursor: pointer;
+}
+.cateButton:hover{
+    background: #E2E8F0;
+    color: #90A4AE;
+}

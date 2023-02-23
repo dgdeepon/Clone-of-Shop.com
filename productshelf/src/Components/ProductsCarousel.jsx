@@ -79,7 +79,7 @@ export default function ProductsCarousel({mainImg,store,mainTxt}) {
     setLoading(true);
     axios.get(`https://63f1198c5b7cf4107e2d155f.mockapi.io/productsDetails`)
     .then((res)=>{
-      console.log(res.data);
+      // console.log(res.data);
       setData(res.data);
     }).catch((err)=>{
       console.log(err);
