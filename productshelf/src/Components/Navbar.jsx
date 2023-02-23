@@ -5,6 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faArrowRotateLeft,faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import CategoryBtn from './CategoryBtn';
 import PShelf from '../Images/PShelf.png';
+import { Link } from 'react-router-dom';
 
 
 export default function Navbar(){
@@ -21,7 +22,9 @@ export default function Navbar(){
     <Box boxShadow={'rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;'}>
     <Center>
      <Grid templateColumns='repeat(4,1fr)' w='100%'>
+     <Link to={'/'}>
      <Image w={'300px'} gridColumnStart={1} alignItems='start' src={PShelf} alt='siteLogo' />
+     </Link>
      {/* <Text fontSize={'4xl'}>PSHELF.COM</Text> */}
     <HStack gridColumnStart={2} gridColumnEnd={4} w={'90%'} border='1px' p={2} borderRadius='25px' bg={'white'} m={2}>
     <Select border='none' borderRight='1px' borderRightRadius='0'>

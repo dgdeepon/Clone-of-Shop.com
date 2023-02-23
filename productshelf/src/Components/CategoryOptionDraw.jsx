@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import {ChevronRightIcon} from '@chakra-ui/icons';
 import BtnStyle from './Style/style.module.css';
+import { Link } from 'react-router-dom';
 
 export default function CategoryOptionDraw({id}) {
 
@@ -33,7 +34,7 @@ export default function CategoryOptionDraw({id}) {
       <DrawerHeader>{id==='cl'? 'Clothes':id==='bea'? 'Beauty':id==='hn'? 'Health & Nutrition':id==='jewel'? 'Jewelry':''}</DrawerHeader>
       <DrawerBody>
     {id==='cl'? data.cl.map((el,i)=>{
-        return <Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text>
+        return<Link to={'/products'}>  <Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text></Link>
     }):''}
       </DrawerBody>
 

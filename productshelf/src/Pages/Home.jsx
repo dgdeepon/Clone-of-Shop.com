@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
 import { Box, Container, Flex, Grid, Heading, Image,Spacer,Text} from '@chakra-ui/react'
 import ProductsCarousel from '../Components/ProductsCarousel'
 import MidBannerOptions from '../Components/MidBannerOptions';
@@ -12,7 +11,6 @@ import BackToTop from '../Components/BackToTop';
 function Home() {
   return (
     <div>
-      <Navbar/>
       <Image pt={{base:180,sm:170,md:160}} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner'/>
       {/* Static Options */}
       <Grid templateColumns={{base:'repeat(1,1fr)',sm:'repeat(2,1fr)',md:'repeat(3,1fr)',xl:'repeat(4,1fr)'}} textAlign='left' p={5} gap='10'>
