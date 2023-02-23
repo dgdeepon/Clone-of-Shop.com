@@ -5,11 +5,10 @@ import {
     Image,
     Text,
     useColorModeValue,
-    Icon,
     chakra,
     Tooltip,
   } from '@chakra-ui/react';
-import { faShoppingCart, faStar, faStarHalf, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 //   import { FiShoppingCart } from 'react-icons/fi';

@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function CategoryOptionDraw({id}) {
 
+
     const data={
         cl:[`Women's Clothing`,`Men's Clothing`,`Accessories`,`Girl's Clothing`,`Boy's Clothing`,`Baby & Toddler Clothing`],
         bea:[],
@@ -34,7 +35,7 @@ export default function CategoryOptionDraw({id}) {
       <DrawerHeader>{id==='cl'? 'Clothes':id==='bea'? 'Beauty':id==='hn'? 'Health & Nutrition':id==='jewel'? 'Jewelry':''}</DrawerHeader>
       <DrawerBody>
     {id==='cl'? data.cl.map((el,i)=>{
-        return<Link to={'/products'}>  <Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text></Link>
+        return<Link to={'/products'} onClick={onClose}><Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text></Link> 
     }):''}
       </DrawerBody>
 

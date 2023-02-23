@@ -5,6 +5,7 @@ import Product from '../Components/Product';
 
 
 export default function ProductsPage(){
+
     const[data,setData]=useState([]);
     const [loading,setLoading]=useState(false);
 
@@ -34,9 +35,9 @@ export default function ProductsPage(){
 
         </Box>
         <Grid templateColumns={'repeat(3,1fr)'}>
-        {loading===false? data?.map((el,i)=>{
-            return <Product name={el.name} image={el.img} price={el.price} store={el.store} rating={Math.random()*5+1} numReviews={(Math.random()*120).toFixed(0)}/>
-        }): <Spinner/>}
+        {loading===false? data?.map((el,i)=>(
+           <Product name={el.name} image={el.img} price={el.price} store={el.store} rating={Math.random()*5+1} numReviews={(Math.random()*120).toFixed(0)}/>
+        )): <Spinner/>}
         </Grid>
     </Grid>
 }
