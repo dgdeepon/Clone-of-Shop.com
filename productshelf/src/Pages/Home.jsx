@@ -86,26 +86,26 @@ function Home() {
       <ProductsCarousel mainTxt={'Cutter & Buck'} mainImg={'https://img.shop.com/Image/250000/253200/253251/products/alt_843659150.jpg?plain&size=1001x1001'} store={'Cutter & Buck'}/>
 
       {/* Our Brands */}
-      <div style={{width:'80%',margin:'auto',marginBottom:'50px'}}>
+      <div style={{width:'80%',display:'flex',flexDirection:'column',justifyContent:'center',margin:'auto',marginBottom:'50px'}}>
       <Heading>Our Brands</Heading>
-      <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(5,1fr)'}} mt='3'>
-          <Box boxSize={'200px'} mb='50px'>
+      <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(5,1fr)'}}  mt='3' >
+          <Box boxSize={'200px'} m={'auto'} mb='50px'>
             <Text as={'b'} size='2xl'>HEALTH & NUTRITION</Text>
             <Image src='https://img.shop.com/Image/homepage/healthnutirtion1572880380738.jpg?id=5014114' alt='HEALTH & NUTRITION'  />
           </Box>
-          <Box boxSize={'200px'} mb='50px'>
+          <Box boxSize={'200px'} m={'auto'} mb='50px'>
             <Text as={'b'} size='mb'>BEAUTY</Text>
             <Image src='https://img.shop.com/Image/homepage/lipstick1572880828301.jpg?id=5014118' alt='BEAUTY' />
           </Box>
-          <Box boxSize={'200px'} mb='50px'>
+          <Box boxSize={'200px'} m={'auto'} mb='50px'>
             <Text as={'b'} size='mb'>HOME & CLEANING</Text>
             <Image src='https://img.shop.com/Image/homepage/home_ma1572880950379.jpg?id=5014120' alt='HOME & CLEANING' />
           </Box>
-          <Box boxSize={'200px'} mb='50px'>
+          <Box boxSize={'200px'} m={'auto'} mb='50px'>
             <Text as={'b'} size='mb'>BABY & KIDS</Text>
             <Image src='https://img.shop.com/Image/homepage/baby-kids1572881179463.jpg?id=5014124' alt='BABY & KIDS' />
           </Box>
-          <Box boxSize={'200px'} mb='50px'>
+          <Box boxSize={'200px'} m={'auto'} mb='50px'>
             <Text as={'b'} size='mb'>JEWELRY</Text>
             <Image src='https://img.shop.com/Image/homepage/1840336563__225x225-img__.jpg?id=5015192' alt='JEWELRY' />
           </Box>
