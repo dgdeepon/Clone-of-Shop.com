@@ -11,7 +11,7 @@ import BackToTop from '../Components/BackToTop';
 function Home() {
   return (
     <div>
-      <Image pt={{base:180,sm:170,md:160}} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner'/>
+      <Image pt={{base:180,sm:170,md:160}} src='https://img.shop.com/Image/homepage/shop-usa-eng-106101-presidents-day-banner-hero-min1676564945923.jpg' alt='topbanner' m={'auto'}/>
       {/* Static Options */}
       <Grid templateColumns={{base:'repeat(1,1fr)',sm:'repeat(2,1fr)',md:'repeat(3,1fr)',xl:'repeat(4,1fr)'}} textAlign='left' p={5} gap='10'>
         <Box boxShadow='rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;' p={3}>
