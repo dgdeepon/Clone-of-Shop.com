@@ -44,9 +44,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
               key={i} style={{ marginLeft: '1' }}
               />;
             } 
-            return <FontAwesomeIcon icon={'star-sharp'} 
-            key={i} style={{ marginLeft: '1' }} 
-            />;
+            // return <FontAwesomeIcon icon={'star-sharp'} 
+            // key={i} style={{ marginLeft: '1' }} 
+            // />;
           })}
         <Box as="span" ml="2" color="gray.600" fontSize="sm">
           {numReviews} review{numReviews > 1 && 's'}
@@ -57,7 +57,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   
   function ProductAddToCart({name,image,rating,price,numReviews,store}) {
     return (
-      <Flex p={50} w="full" alignItems="center" justifyContent="center">
+      <Flex p={50} alignItems="center" justifyContent="center">
         <Box
           bg={useColorModeValue('white', 'gray.800')}
           maxW="sm"

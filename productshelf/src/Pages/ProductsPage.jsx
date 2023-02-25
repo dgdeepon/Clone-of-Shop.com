@@ -1,4 +1,4 @@
-import { Box, Grid, Spinner } from "@chakra-ui/react";
+import { Box, Checkbox, Flex, Grid, GridItem, Select, Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Product from '../Components/Product';
@@ -30,11 +30,34 @@ export default function ProductsPage(){
     },[])
 
 
-    return <Grid templateColumns={'(30%,70%)'} pt='200px'>
-        <Box>
-
-        </Box>
-        <Grid templateColumns={'repeat(3,1fr)'}>
+    return <Grid templateColumns={{base:'1fr',md:'1fr',lg:'15% 1fr'}} pt='200px'>
+        <GridItem >
+        <Select>
+            <option>Sort by Price</option>
+            <option>Low to High</option>
+            <option>High to Low</option>
+        </Select>
+        <Flex flexDirection={'column'}>
+        <label>Categories</label>
+        <Checkbox>T-shirts</Checkbox>
+        <Checkbox>Shirts</Checkbox>
+        <Checkbox>Jeans</Checkbox>
+        <Checkbox>Jackets</Checkbox>
+        </Flex>
+        <Select>
+            <option>Categories</option>
+            <option>T-shirts</option>
+            <option>Shirts</option>
+            <option>Jeans</option>
+            <option>Jackets</option>
+        </Select>
+        <Select>
+            <option>Sort by Price</option>
+            <option>Low to High</option>
+            <option>High to Low</option>
+        </Select>
+        </GridItem>
+        <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,45%)',lg:'repeat(2,45%)',xl:'repeat(3,30%)'}}>
         {loading===false? data?.map((el,i)=>(
            <Product name={el.name} image={el.img} price={el.price} store={el.store} rating={Math.random()*5+1} numReviews={(Math.random()*120).toFixed(0)}/>
         )): <Spinner/>}

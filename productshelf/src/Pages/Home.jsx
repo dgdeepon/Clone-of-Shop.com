@@ -112,7 +112,6 @@ function Home() {
       </Grid>
       </div>
         <BackToTop/>
-      <Footer/>
     </div>
   )
 }
