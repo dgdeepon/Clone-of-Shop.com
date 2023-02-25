@@ -6,6 +6,7 @@ import { faArrowRotateLeft,faCartShopping, faUser } from '@fortawesome/free-soli
 import CategoryBtn from './CategoryBtn';
 import PShelf from '../Images/PShelf.png';
 import { Link, Navigate } from 'react-router-dom';
+import SignInBtn from './SignInBtn';
 
 
 export default function Navbar(){
@@ -55,8 +56,7 @@ export default function Navbar(){
     <Spacer/>
     <HStack>
     <div>
-    <FontAwesomeIcon icon={faUser}/>
-    Sign in
+    <SignInBtn/>
     </div>
     <div>
     <FontAwesomeIcon icon={faArrowRotateLeft}/>
