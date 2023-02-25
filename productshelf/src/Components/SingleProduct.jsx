@@ -29,7 +29,7 @@ import { useEffect, useState } from 'react';
         axios.get(`https://63f1198c5b7cf4107e2d155f.mockapi.io/productsDetails`)
         .then((res)=>{
             res.data.map((item,i)=>{
-                if(i==params.pId){
+                if(item.id==params.pId){
                     setPro(item);
                     return;
                 }

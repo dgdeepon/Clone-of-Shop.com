@@ -58,7 +58,7 @@ import { Link, Navigate } from 'react-router-dom';
   
   function ProductAddToCart({name,image,rating,price,numReviews,store,id}) {
     return (
-      <Flex p={50} alignItems="center" justifyContent="center" cursor={'pointer'}>
+      <Flex p={50} alignItems="center" justifyContent="center" cursor={'pointer'} _hover={{color:'#90A4AE'}}>
         <Box
           bg={useColorModeValue('white', 'gray.800')}
           maxW="sm"

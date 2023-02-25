@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faArrowRotateLeft,faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons';
 import CategoryBtn from './CategoryBtn';
 import PShelf from '../Images/PShelf.png';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 
 export default function Navbar(){
@@ -33,7 +33,10 @@ export default function Navbar(){
     })}
     </Select>
     <Input border={'1px'} borderColor={'gray.300'} placeholder='Search ProductShelf...' type='search' />
+    <Link to={'/products'}>
+
     <Search2Icon cursor={'pointer'}/>
+    </Link>
     </HStack>
     </Grid>
     </Center>
