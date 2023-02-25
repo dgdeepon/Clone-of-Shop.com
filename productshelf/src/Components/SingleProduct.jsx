@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
     Box,
     chakra,
@@ -15,6 +16,9 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
   } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -48,6 +52,15 @@ import { useEffect, useState } from 'react';
 
     return (
       <Container maxW={'7xl'}  pt='200px'>
+        <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
+  <BreadcrumbItem>
+    <BreadcrumbLink href='/products'>Products</BreadcrumbLink>
+  </BreadcrumbItem>
+
+  <BreadcrumbItem isCurrentPage>
+    <BreadcrumbLink href='#'>{pro?.sub_category}</BreadcrumbLink>
+  </BreadcrumbItem>
+</Breadcrumb>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
