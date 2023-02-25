@@ -10,6 +10,7 @@ import {
   } from '@chakra-ui/react';
 import { faShoppingCart, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link, Navigate } from 'react-router-dom';
 //   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 //   import { FiShoppingCart } from 'react-icons/fi';
   
@@ -44,9 +45,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
               key={i} style={{ marginLeft: '1' }}
               />;
             } 
-            return <FontAwesomeIcon icon={'star-sharp'} 
-            key={i} style={{ marginLeft: '1' }} 
-            />;
+            // return <FontAwesomeIcon icon={'star-sharp'} 
+            // key={i} style={{ marginLeft: '1' }} 
+            // />;
           })}
         <Box as="span" ml="2" color="gray.600" fontSize="sm">
           {numReviews} review{numReviews > 1 && 's'}
@@ -55,9 +56,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
     );
   }
   
-  function ProductAddToCart({name,image,rating,price,numReviews,store}) {
+  function ProductAddToCart({name,image,rating,price,numReviews,store,id}) {
     return (
-      <Flex p={50} w="full" alignItems="center" justifyContent="center">
+      <Flex p={50} alignItems="center" justifyContent="center" cursor={'pointer'}>
         <Box
           bg={useColorModeValue('white', 'gray.800')}
           maxW="sm"
@@ -71,13 +72,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
               top={2}
               right={2}
               bg="red.200"
-            />
-  
+              />
+      <Link  to={`/products/${id}`}>
           <Image
             src={image}
             alt={`Picture of ${name}`}
             roundedTop="lg"
-          />
+            />
+            </Link>
   
           <Box p="6">
             <Flex mt="1" justifyContent="space-between" alignContent="center">
@@ -102,7 +104,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
               </Tooltip>
             </Flex>
             <Text>Sold by {store}</Text>
-  
+
             <Flex justifyContent="space-between" alignContent="center">
               <Rating rating={rating} numReviews={numReviews} />
               <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
