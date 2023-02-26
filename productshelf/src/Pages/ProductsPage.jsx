@@ -59,7 +59,7 @@ export default function ProductsPage(){
         </GridItem>
         <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,45%)',lg:'repeat(2,45%)',xl:'repeat(3,30%)'}}>
         {loading===false? data?.map((el,i)=>(
-          <Product name={el.name} image={el.img} price={el.price} store={el.store} rating={Math.random()*5+1} numReviews={(Math.random()*120).toFixed(0)} id={i}/>
+          <Product name={el.name} image={el.img} price={el.price} store={el.store} rating={Math.random()*5+1} numReviews={(Math.random()*120).toFixed(0)} id={el.id}/>
         )): <Spinner/>}
         </Grid>
     </Grid>

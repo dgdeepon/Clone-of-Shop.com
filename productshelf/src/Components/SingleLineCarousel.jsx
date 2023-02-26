@@ -15,6 +15,7 @@ import axios from 'axios';
 import Slider from 'react-slick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 // Settings for the slider
 const settings = {
@@ -54,11 +55,13 @@ const settings = {
 // function ProductBox
 export function ProductBox(title,price,img,id){
   return <Flex flexDirection={'row'} key={id} p='6' cursor={'pointer'}>
+    <Link to={`products/${id}`}>
     <Image src={img} alt={title} />
     <Text>{title}</Text>
     <Text as={'b'}>${price}</Text>
     <Text>+$1.04/2% Cashback</Text>
     <Text>Free shipping with $125 orders</Text>
+    </Link>
   </Flex>
 }
 
