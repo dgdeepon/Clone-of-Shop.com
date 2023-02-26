@@ -11,11 +11,74 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    useToast,
+    Wrap,
+    WrapItem,
   } from '@chakra-ui/react';
 import { faTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useReducer } from 'react';
+import axios from 'axios';
+
+const initVal={
+  email:'',
+  password:''
+}
+
+const reduce=(state,action)=>{
+  switch(action.type){
+    case 'email':
+      return {
+        ...state,
+        email:action.payload
+      }  
+    case 'password':
+      return {
+        ...state,
+        password:action.payload,
+      }
+    case 'reset':
+      return {
+        firstName:'',
+        lastName:'',
+      }
+    default:
+      return state;    
+  }
+}
   
   export default function SignInPage() {
+
+    const [state,dispatch]=useReducer(reduce,initVal);
+    const toast = useToast();
+
+    // login
+    function login(){
+      axios.get(`https://63fb0ed22027a45d8d5f615b.mockapi.io/userData?email=${state.email}`)
+      .then((res)=>{
+        toast({
+          title: res.data[0].password===state.password ? 'Login Successful':'Wrong Credentials',
+          status:res.data[0].password===state.password ? 'success':'error',
+          duration:3000,
+          isClosable:true
+        })
+        if(res.data[0].password===state.password){
+          axios.patch(`https://63fb0ed22027a45d8d5f615b.mockapi.io/userData?email=${state.email}`,{
+            status:true
+          }).then((res)=>{
+            console.log(res);
+          }).catch((err)=>{
+            console.log(err);
+          })
+        } 
+      }).catch((err)=>{
+        console.log(err);
+      })
+    }
+
+
+
+
     return (
       <Flex
         minH={'100vh'}
@@ -37,11 +100,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" value={state.email} onChange={(e)=>{
+                  dispatch({type:'email',payload:e.target.value});
+                }}/>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input type="password" value={state.password} onChange={(e)=>{
+                  dispatch({type:'password',payload:e.target.value});
+                }} />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -56,7 +123,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',
-                  }}>
+                  }} onClick={login}>
                   Sign in
                 </Button>
                 <Link href='/createAccount' color={'blue.400'}>
