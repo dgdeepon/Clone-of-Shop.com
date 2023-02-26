@@ -1,14 +1,14 @@
 import { Box, Heading, Text, Button } from '@chakra-ui/react';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 export default function PageNotFound() {
   return (
-    <Box textAlign="center" py={10} px={6}>
+    <Box textAlign="center" py={10} px={6} pt='200px'>
       <Heading
         display="inline-block"
         as="h2"
         size="2xl"
-        bgGradient="linear(to-r, teal.400, teal.600)"
+        bgGradient="linear(to-r, purple.400, purple.600)"
         backgroundClip="text">
         404
       </Heading>
@@ -19,15 +19,16 @@ export default function PageNotFound() {
         The page you're looking for does not seem to exist
       </Text>
 
+    <Link to={'/'}>
+
       <Button
-        colorScheme="teal"
-        bgGradient="linear(to-r, teal.400, teal.500, teal.600)"
+        colorScheme="purple"
+        bgGradient="linear(to-r, purple.400, purple.500, purple.600)"
         color="white"
-        variant="solid" onClick={()=>{
-            <Navigate to={'/'}/>
-        }}>
+        variant="solid">
         Go to Home
       </Button>
+            </Link>
     </Box>
   );
 }
