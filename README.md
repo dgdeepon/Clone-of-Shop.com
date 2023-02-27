@@ -15,6 +15,12 @@ This is the clone of Shop.com
 
 [SIGN-IN AND SIGN-UP OPTIONS]
 ![Screenshot from 2023-02-27 22-56-00](https://user-images.githubusercontent.com/107040689/221641078-64c79a55-d688-4489-a4db-4f9082e26c8b.png)
+
+[SIGN-IN PAGE]
 ![Screenshot from 2023-02-27 22-56-16](https://user-images.githubusercontent.com/107040689/221641095-21b9120c-e30c-4637-bcbc-546f67350e3f.png)
+
+[SIGN-UP PAGE]
 ![Screenshot from 2023-02-27 22-56-41](https://user-images.githubusercontent.com/107040689/221641106-e2bb6aac-41f0-4955-8518-f38e7fc340ff.png)
+
+[CART OPTION]
 ![Screenshot from 2023-02-27 22-57-49](https://user-images.githubusercontent.com/107040689/221641116-f2099da7-3ac4-4e9f-b36f-59361520929d.png)
