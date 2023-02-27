@@ -1,7 +1,6 @@
 # aromatic-desk-2443
 This is the clone of Shop.com
 
-
 Tech Stacks: Reactjs and Chakra UI.
 
 [HOME PAGE]
