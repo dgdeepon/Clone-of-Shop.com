@@ -11,6 +11,8 @@ import {
 import { faShoppingCart, faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, Navigate } from 'react-router-dom';
+import { Auth } from './ContextApi';
+import { useContext } from 'react';
 //   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 //   import { FiShoppingCart } from 'react-icons/fi';
   
@@ -57,6 +59,7 @@ import { Link, Navigate } from 'react-router-dom';
   }
   
   function ProductAddToCart({name,image,rating,price,numReviews,store,id}) {
+    const {addItem}=useContext(Auth);
     return (
       <Flex p={50} alignItems="center" justifyContent="center" cursor={'pointer'} _hover={{color:'#90A4AE'}}>
         <Box
@@ -97,7 +100,16 @@ import { Link, Navigate } from 'react-router-dom';
                 placement={'top'}
                 color={'gray.800'}
                 fontSize={'1.2em'}>
-                <chakra.a href={'#'} display={'flex'}>
+                <chakra.a href={'#'} display={'flex'} onClick={()=>{
+                  let obj={
+                    name:name,
+                    img:image,
+                    price:price,
+                    store:store,
+                    id:id
+                  }
+                  addItem(obj);
+                }}>
                 <FontAwesomeIcon icon={faShoppingCart}
                   h={7} w={7} alignSelf={'center'} />
                 </chakra.a>
