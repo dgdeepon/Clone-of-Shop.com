@@ -7,6 +7,7 @@ import CategoryBtn from './CategoryBtn';
 import PShelf from '../Images/PShelf.png';
 import { Link, Navigate } from 'react-router-dom';
 import SignInBtn from './SignInBtn';
+import Cart from '../Components/Cart';
 
 
 export default function Navbar(){
@@ -55,16 +56,15 @@ export default function Navbar(){
     </HStack>
     <Spacer/>
     <HStack>
-    <div>
+    <div style={{padding:'5px'}}>
     <SignInBtn/>
     </div>
-    <div>
+    <div style={{padding:'5px'}}>
     <FontAwesomeIcon icon={faArrowRotateLeft}/>
     Orders
     </div>
-    <div>
-    <FontAwesomeIcon icon={faCartShopping}/>
-    Cart
+    <div style={{padding:'5px',cursor:'pointer'}}>
+    <Cart/>
     </div>
     </HStack>
     </Flex>

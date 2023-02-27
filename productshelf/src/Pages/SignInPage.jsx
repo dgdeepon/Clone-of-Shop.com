@@ -19,6 +19,8 @@ import { faTag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useReducer } from 'react';
 import axios from 'axios';
+import { Auth } from '../Components/ContextApi';
+import { useContext } from 'react';
 
 const initVal={
   email:'',
@@ -49,30 +51,39 @@ const reduce=(state,action)=>{
   
   export default function SignInPage() {
 
+
+    const {setLogin,setCondition,add}=useContext(Auth);
     const [state,dispatch]=useReducer(reduce,initVal);
     const toast = useToast();
 
     // login
     function login(){
+      if(state.email===''|| state.password===''){
+        console.log('fillup the input');
+        return;
+      }
       axios.get(`https://63fb0ed22027a45d8d5f615b.mockapi.io/userData?email=${state.email}`)
       .then((res)=>{
+        console.log(res)
         toast({
           title: res.data[0].password===state.password ? 'Login Successful':'Wrong Credentials',
           status:res.data[0].password===state.password ? 'success':'error',
           duration:3000,
           isClosable:true
         })
-        if(res.data[0].password===state.password){
-          axios.patch(`https://63fb0ed22027a45d8d5f615b.mockapi.io/userData?email=${state.email}`,{
-            status:true
-          }).then((res)=>{
-            console.log(res);
-          }).catch((err)=>{
-            console.log(err);
-          })
+        if(res.data.length>0 && res.data[0].password===state.password){
+          setLogin(true);
+          localStorage.setItem('token',res.data[0].id);
+          add(res.data[0].firstName);
         } 
       }).catch((err)=>{
         console.log(err);
+        toast({
+          title:'Wrong Credentials',
+          status:'error',
+          isClosable:true,
+          duration:3000
+        })
       })
     }
 
