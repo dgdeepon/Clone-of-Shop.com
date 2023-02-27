@@ -1,4 +1,7 @@
 # aromatic-desk-2443
+This is the clone of Shop.com
+
+[HOME PAGE]
 ![Screenshot from 2023-02-27 22-53-50](https://user-images.githubusercontent.com/107040689/221640987-f9f33fa0-9dca-4ea0-aba2-fc8163db9e40.png)
 ![Screenshot from 2023-02-27 22-54-47](https://user-images.githubusercontent.com/107040689/221641010-35b6a5f4-2a2a-4d7c-985c-18cc469c629a.png)
 ![Screenshot from 2023-02-27 22-55-14](https://user-images.githubusercontent.com/107040689/221641020-8ba284cd-9113-4c35-8a1c-25dafd0c8e2f.png)
