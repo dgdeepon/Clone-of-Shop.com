@@ -1,8 +1,9 @@
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay,Text } from "@chakra-ui/react"
+import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay,Text,Flex,Image, VStack, HStack } from "@chakra-ui/react"
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React from "react";
+import React, { useEffect } from "react";
 import { useDisclosure } from "@chakra-ui/react";
+let data=JSON.parse(localStorage.getItem('cartData'));
 
 
 
@@ -14,6 +15,10 @@ export default function Cart() {
       setSize(newSize)
       onOpen()
     }
+
+    useEffect(()=>{
+
+    },[data]);
   
     return (
       <>
@@ -25,9 +30,16 @@ export default function Cart() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <Text textAlign={'center'} p='5'>Shopping Cart</Text>
             <DrawerBody>
-
+              <Text textAlign={'center'} p='5'>Shopping Cart</Text>
+          {data?.map((item,i)=>{
+            return <div style={{display:'flex',flexDirection:"column"}}>
+              <HStack boxSize={'36'}>
+                <Image src={item.img} w='min-content' alt='items'/>
+                <Text>{item.name}</Text>
+              </HStack>
+            </div>
+          })}
 
             </DrawerBody>
           </DrawerContent>

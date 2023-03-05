@@ -108,6 +108,7 @@ import { useContext } from 'react';
                     store:store,
                     id:id
                   }
+                  console.log(obj);
                   addItem(obj);
                 }}>
                 <FontAwesomeIcon icon={faShoppingCart}
