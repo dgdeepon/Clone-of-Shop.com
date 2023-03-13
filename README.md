@@ -2,6 +2,7 @@
 This is the clone of Shop.com
 
 Tech Stacks: Reactjs and Chakra UI.
+Live : https://pshelf.netlify.app/
 
 [HOME PAGE]
 ![Screenshot from 2023-02-27 22-53-50](https://user-images.githubusercontent.com/107040689/221640987-f9f33fa0-9dca-4ea0-aba2-fc8163db9e40.png)
