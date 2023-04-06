@@ -5,6 +5,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import {ChevronRightIcon} from '@chakra-ui/icons';
 import BtnStyle from './Style/style.module.css';
 import { Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { Auth } from './ContextApi';
 
 
 
@@ -19,6 +21,7 @@ export default function CategoryOptionDraw({id}) {
     }
 
     const {isOpen,onOpen,onClose}=useDisclosure();
+    const {setParameter}=useContext(Auth);
     
 
   return (
@@ -37,7 +40,10 @@ export default function CategoryOptionDraw({id}) {
       <DrawerHeader>{id==='cl'? 'Clothes':id==='bea'? 'Beauty':id==='hn'? 'Health & Nutrition':id==='jewel'? 'Jewelry':''}</DrawerHeader>
       <DrawerBody>
     {id==='cl'? data.cl.map((el,i)=>{
-        return i==1? <Link to={'/products'} onClick={onClose}><Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text></Link>:
+        return i==1? <Link to={'/products'} onClick={()=>{
+          onClose();
+          setParameter('men');
+        }}><Text key={i} className={BtnStyle.cateButton}>{el}<ChevronRightIcon/></Text></Link>:
         <Text key={i} className={BtnStyle.cateButton}>
           {el}<ChevronRightIcon/>
         </Text> 

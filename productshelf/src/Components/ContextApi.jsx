@@ -10,6 +10,7 @@ export default function ContextApi({children}){
     const [condition,setConditon]=useState('');
     const [loginStatus,setLogin]=useState(false);
     const navi=useNavigate();
+    const [parameter,setParameter]=useState('');
 
 
     function addItem(val){
@@ -28,5 +29,5 @@ export default function ContextApi({children}){
 
     },[condition]);
 
-    return <Auth.Provider value={{condition,loginStatus,setLogin,setConditon,add,addItem}}>{children}</Auth.Provider>
+    return <Auth.Provider value={{condition,loginStatus,setLogin,setConditon,add,addItem,parameter,setParameter}}>{children}</Auth.Provider>
 }

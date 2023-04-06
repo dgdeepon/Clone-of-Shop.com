@@ -2,21 +2,33 @@ import { Box, Checkbox, Flex, Grid, GridItem, Select, Spinner } from "@chakra-ui
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Product from '../Components/Product';
+import { useContext } from "react";
+import { Auth } from "../Components/ContextApi";
 
 
 export default function ProductsPage(){
 
     const[data,setData]=useState([]);
     const [loading,setLoading]=useState(false);
+    const {parameter}=useContext(Auth);
 
 
     // FetchNow
     function FetchNow(){
         setLoading(true);
-        axios.get(`https://63f1198c5b7cf4107e2d155f.mockapi.io/productsDetails`)
+        axios.get(`https://63f1198c5b7cf4107e2d155f.mockapi.io/productsDetails?type=${parameter}`)
         .then((res)=>{
-            setData(res.data);
-            console.log(res.data);
+            if(parameter==='men'){
+                let new_data=res.data.filter((el,ind)=>{
+                    if(el.type==='men'){
+                        return true;
+                    }
+                })
+                setData(new_data);
+            }else{
+                setData(res.data);
+            }
+            // console.log(new_data);
         }).catch((err)=>{
             console.log(err);
         }).finally(()=>{
@@ -50,11 +62,6 @@ export default function ProductsPage(){
             <option>Shirts</option>
             <option>Jeans</option>
             <option>Jackets</option>
-        </Select>
-        <Select>
-            <option>Sort by Price</option>
-            <option>Low to High</option>
-            <option>High to Low</option>
         </Select>
         </GridItem>
         <Grid templateColumns={{base:'repeat(1,1fr)',md:'repeat(2,45%)',lg:'repeat(2,45%)',xl:'repeat(3,30%)'}}>
